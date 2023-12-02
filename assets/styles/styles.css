@@ -1,14 +1,14 @@
-
 /** @format **/
-h2{
-    color:silver;
+h2 {
+    color: silver;
 }
-.cell-header{
-    background-color:silver;
-    font-weight: bold;
-}
-.cell-header-minus{
-    background-color:gainsboro;
+
+.cell-header {
+    background-color: silver;
     font-weight: bold;
 }
 
+.cell-header-minus {
+    background-color: gainsboro;
+    font-weight: bold;
+}

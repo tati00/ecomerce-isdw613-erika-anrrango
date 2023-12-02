@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acerca de</title>
     <style>
-        .mititulo{
+        #titulo {
             font-weight: bold;
             font-size: 1.5em;
             /*color: blue;
@@ -16,7 +17,7 @@
             text-transform: capitalize;
             letter-spacing: 5px;
             text-shadow: 1px 1px #000000;
-            background-color:burlywood;
+            background-color: burlywood;
             /*border-color: #000000;*/
             border: 5px #000000 solid;
             /*padding-left: 40px;
@@ -26,20 +27,133 @@
             padding: 40px 10px 40px 10px;
             margin: 20px 30px 70px 30px;
         }
-        .mitexto{
+
+        .mitexto {
             font-size: 0.9em;
             text-align: justify;
-            text-decoration:underline;
+            text-decoration: underline;
+            line-height: 1.5;
+        }
+
+        table,
+        th,
+        tr,
+        td {
+            border: 1px solid;
+            width: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            height: 50px;
+            text-align: center;
+            color: #ffffff;
+            vertical-align: middle;
+            background-color: #000000;
+        }
+
+        td {
+            padding: 20px
+        }
+
+        td:hover {
+            background-color: cadetblue;
+        }
+
+        tr:nth-child(even) {
+            background-color: cyan;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(168, 230, 98);
+        }
+
+        a:hover {
+            color: cadetblue;
+        }
+
+        a:visited {
+            color: rgb(129, 95, 160);
+        }
+
+        a:link {
+            color: blue;
+        }
+
+        p::first-letter {
+            font-size: 50px;
+        }
+
+        p::first-line {
+            color: rgb(133, 80, 255);
+        }
+
+        .micombinador>p {
+            background-color: darkgray;
+        }
+        a[target=blank]{
+            color: darkorange;
         }
     </style>
 </head>
+
 <body>
     <p id="titulo" class="mititulo">Acerca de</p>
     <!--ol>li*5{lista}-->
-<p class="mitexto">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus harum quos magnam. Similique explicabo sit sint eligendi quis, obcaecati maiores tempora autem, voluptatum placeat adipisci rerum esse, quam architecto tempore!
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus harum quos magnam. Similique explicabo sit sint eligendi quis, obcaecati maiores tempora autem, voluptatum placeat adipisci rerum esse, quam architecto tempore!
-</p>
+    <p class="mitexto">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus harum quos magnam. Similique explicabo sit
+        sint eligendi quis, obcaecati maiores tempora autem, voluptatum placeat adipisci rerum esse, quam architecto
+        tempore!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus harum quos magnam. Similique
+        explicabo sit
+        sint eligendi quis, obcaecati maiores tempora autem, voluptatum placeat adipisci rerum esse, quam architecto
+        tempore!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus harum quos magnam. Similique
+        explicabo sit
+        sint eligendi quis, obcaecati maiores tempora autem, voluptatum placeat adipisci rerum esse, quam architecto
+        tempore!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus harum quos magnam. Similique
+        explicabo sit
+        sint eligendi quis, obcaecati maiores tempora autem, voluptatum placeat adipisci rerum esse, quam architecto
+        tempore!
+    </p>
+    <div style="width: 100px">
+        <table >
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Tel&eacute;fono</th>
+            </tr>
+            <tr>
+                <td>JoeDoe</td>
+                <td>joe.doe@email.com</td>
+                <td>0999852639</td>
+            </tr>
+            <tr>
+                <td>JoeDoe</td>
+                <td>joe.doe@email.com</td>
+                <td>0999852639</td>
+            </tr>
+            <tr>
+                <td>JoeDoe</td>
+                <td>joe.doe@email.com</td>
+                <td>0999852639</td>
+            </tr>
+            <tr>
+                <td>JoeDoe</td>
+                <td>joe.doe@email.com</td>
+                <td>0999852639</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <a href="https://www.wikipedia.org/" target="_self">Mis otros productos</a>
+    <br>
+    <div class="micombinador">
+        <p>Texto dentro de combinador</p>
+        <h1>Ejemplo</h1>
+    </div>
+
+</body>
 
 </html>
-<!---font-size: 0.9em;-->
