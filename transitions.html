@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+    <style>
+        #transition1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition-property: widht;
+            /*cambio en una propiedad*/
+            transition-duration: 3s;
+            /*duración de la propiedad animada*/
+        }
+
+        /*Transición del ancho*/
+        #transition1:hover {
+            width: 300px;
+        }
+
+        #transition2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: widht 3s, height 3s;
+            transition-timing-function: linear, ease-in;
+        }
+
+        #transition2:hover {
+            width: 300px;
+            height: 300px;
+        }
+
+        #transition3 {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            transition: background-color 3s;
+            transition-timing-function: linear;
+        }
+
+        #transition3:hover {
+            background-color: yellow;
+        }
+
+        #transition4 {
+            background-color: rgb(237, 235, 235);
+            color: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 6px;
+            transition: border-radius 3s;
+        }
+        #transition4:hover {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="transition1"></div>
+    <div id="transition2"></div>
+    <div id="transition3"></div>
+    <img src="assets/images/necklaceESM.png" id="transition4"></div>
+</body>
+
+</html>

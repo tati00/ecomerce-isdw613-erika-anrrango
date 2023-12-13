@@ -12,28 +12,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-        <style>
-            .border-column{
-                border-right: 2px black solid;
-            }
-            .details{
-                background-color: rgb(106,23,23);
-            }
-            .container-header{
-                background-color: rgb(106,23,23);
-            }
-        </style>
+
+    <link rel="stylesheet" href="styles/mystyle.css" class="href">
+    <link rel="stylesheet" href="styles/taller.css" class="href">
+    <style>
+        .border-column {
+            border-right: 2px black solid;
+        }
+
+        .details {
+            background-color: rgb(106, 23, 23);
+        }
+
+        .container-header {
+            background-color: rgb(106, 23, 23);
+        }
+
+        nav ul li a {
+            font-size: 30px;
+        }
+    </style>
 </head>
 
 <body>
     <!--<h1>Mi E-comerce</h1>-->
-
-    <!--<ul>
-        <li>Home</li>
-        <li>Productos</li>
-        <li><a href="about.html" target="blank">Acerca de ...</a></li>
-        <li><a href="contact.html" target="blank">Contacto</a></li>
-    </ul>-->
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -49,7 +51,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="about.html">About us</a>
                     </li>
                     <li class="nav-item dropdown"> <!---dropdown para crear sub clases-->
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -57,17 +59,19 @@
                             Necklace
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Esmeralde</a></li>
+                            <li><a class="dropdown-item" href="product.html">Esmerald</a></li>
                             <li><a class="dropdown-item" href="#">Purple</a></li>
                             <li><a class="dropdown-item" href="#">Red</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="bonus.html">Especiales</a></li>
                         </ul>
                     </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>elemento desahabilitado </li>-->
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a> <!--elemento desahabilitado-->
+                        <a class="nav-link" href="contact.html">Contáctenos</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -78,20 +82,28 @@
         </div>
     </nav>
 
-    <hr>
-
-    <h1>Productos en oferta</h1>
-
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="product.html">Productos</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Detalle producto</li>
-        </ol>
+    <!--
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Productos</a>
+            </li>
+        </ul>
     </nav>
 
+        <ul>
+        <li>Home</li>
+        <li>Productos</li>
+        <li><a href="about.html" target="blank">Acerca de ...</a></li>
+        <li><a href="contact.html" target="blank">Contacto</a></li>
+    </ul>-->
+
+    <hr>
+
+    <h1 id="titulo1">Productos en oferta</h1>
+    <br>
     <div class="content">
-        <div class="row gx-5">
+        <div class="row">
             <div class="col col-md-3">
                 <div class="card" style="width: 18rem;">
                     <img src="assets/images/necklaceESM.png" class="card-img-top" alt="...">

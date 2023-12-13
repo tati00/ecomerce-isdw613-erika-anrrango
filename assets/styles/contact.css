@@ -1,0 +1,14 @@
+h1 {
+    color: rgb(137, 152, 137);
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-weight: 900;
+}
+.formulario {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 600px;
+    gap: 10px;
+}

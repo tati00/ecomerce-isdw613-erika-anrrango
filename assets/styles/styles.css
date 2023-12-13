@@ -2,13 +2,26 @@
 h2 {
     color: silver;
 }
+#productDetailsTitle {
+    border: 1px solid black;
+    text-align: center;
+}
+.parrafo{
+    font-size: 14px;
+    text-align: justify;
+}
+#fila{
+    border-bottom: 2px solid black;
+}
 
 .cell-header {
     background-color: silver;
     font-weight: bold;
+    border-right: 2px black solid;
 }
 
 .cell-header-minus {
     background-color: gainsboro;
     font-weight: bold;
+    border-right: 2px black solid;
 }

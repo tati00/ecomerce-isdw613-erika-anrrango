@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento</title>
+    <style>
+        #firstElement {
+            position: relative;
+            /*relativo al atributo padre (propia página HTML)*/
+            left: 30px;
+            top: 70px;
+            right: 30px;
+            bottom: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            color: white;
+            z-index: 2;
+            /*profundidad de ese elemento (> 0 se va a sobreponer/priorizar por sobre los menores de 1)*/
+        }
+
+        #secondaElement {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            color: white;
+            z-index: 1;
+            /*profundidad de ese elemento (> 0 se va a sobreponer/priorizar por sobre los menores de 1)*/
+        }
+
+        #container {
+            /*position: relative;*/
+            width: 400px;
+            height: 400px;
+            background-color: brown;
+            text-align: center;
+        }
+
+        #child {
+            /*position: absolute; /*posición absoluta a la página HTML*/
+            position: relative;
+            /*posición absoluta al contenedor*/
+            left: 100px;
+            top: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="firstElement">Primer elemento</div>
+    <div id="secondaElement">Segundo elemento</div>
+
+    <div id="container">
+        <div id="child">
+            Componente hijo
+        </div>
+    </div>
+
+</body>
+
+</html>
