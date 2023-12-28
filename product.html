@@ -86,6 +86,21 @@
         </tr>
     </table>
 
+    <script>
+        function transverseDOM(nodo){
+            var childNodes = nodo.childNodes;
+            childNodes.forEach(element => {
+                console.log("=========================================")
+                console.log("Nodo: " + element.nodeName + ", Tipo: " + element.nodeType + " valor: " + element.nodeValue);
+                console.log("Nodo padre: " + element.parentNode);
+
+                if(element.hasChildNodes){
+                    transverseDOM(element);
+                }
+            });
+        }
+        transverseDOM(document.body);
+    </script>
 </body>
 
 </html>
