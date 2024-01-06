@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Sample</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+</head>
+
+<body>
+    <div id="mycontent">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Harum ullam quisquam error hic voluptates ut et.
+        Voluptates suscipit, aliquid ipsa assumenda alias mollitia nostrum molestiae, officiis quasi unde quas? Quo!
+    </div>
+    <!--
+    <button onclick="hideContent()">Ocultar</button>
+    -->
+    <button id="btnHide">Ocultar</button>
+    <div id="mysecondarycontent" style="border: 2px solid red">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Pariatur labore ad, totam a omnis maxime! Rerum tempore totam dolorum ad corporis inventore, minima placeat
+        doloribus velit neque atque, voluptates libero!
+    </div>
+
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $("#mysecondarycontent").mouseenter(function () {
+            $(this).css("color", "blue")
+        })
+        $("#mysecondarycontent").mouseleave(function () {
+            $(this).css("color", "black")
+        })
+        function hideContent() {
+            //document.getElementById("mycontent").style.visibility = "hidden";
+            $("div").hide();
+
+            //$("*") -> Seleccionar todos los elementos de la página
+            //$(this) -> Obtener el elemento actual
+            //$("p.className") ->Obtenemos todos lod elementos de tipo p con el nombre de clase
+            //$("p:first") ->Obtenemos el primer elemento del DOM de tipo p
+
+        }
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+            console.log("page ready")
+        });
+        $("#btnHide").click(function () {
+            $(this).text("OCULTO")
+            hideContent();
+        });
+
+    </script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
+</body>
+
+</html>
