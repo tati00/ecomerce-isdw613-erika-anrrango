@@ -11,11 +11,18 @@
     <div id="userinfo"></div>
     <button onclick="loadInfo()">View Info</button>
 
+    <div id="copyText" style="border: 2px solid red">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Magni corrupti, facilis sapiente voluptatem cupiditate autem at veniam error eius amet accusantium voluptas enim
+        sit non saepe.
+    </div>
+    <button id="btnCopiar" onclick="copiar()">Copiar</button>
+
     <script>
         function loadInfo() {
             const httpreq = new XMLHttpRequest() //request a un servidor
-            
-            httpreq.onload = function(){
+
+            httpreq.onload = function () {
                 console.log(this.responseText);
                 document.getElementById("userinfo").innerHTML = this.responseText;
             }
@@ -23,6 +30,26 @@
             httpreq.send();
             console.log("Luego de send...")
         }
+        function copiar() {
+            // Seleccionar el texto que se va a copiar
+            var textoACopiar = document.getElementById('copyText').innerText;
+
+            // Crear un área de texto temporal para copiar el contenido
+            var areaDeTexto = document.createElement('textarea');
+            areaDeTexto.value = textoACopiar;
+
+            // Adjuntar el área de texto temporal al cuerpo del documento
+            document.body.appendChild(areaDeTexto);
+
+            // Seleccionar y copiar el contenido del área de texto
+            areaDeTexto.select();
+            document.execCommand('copy');
+
+            // Eliminar el área de texto temporal
+            document.body.removeChild(areaDeTexto);
+            alert('Texto copiado exitosamente!');
+        }
     </script>
 </body>
+
 </html>
