@@ -23,12 +23,13 @@
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">Contáctenos</li>
     </ol>
-    <form method="post" action="/processForm.html" onsubmit="return validateForm();">
+    <form method="POST" action="/processForm.php"><!--onsubmit="return validateForm();">--> 
         <div class="form-group">
             <label for="name">Nombre: </label>
             <input id="name" class="form-control" placeholder="Ingrese el nombre" name="nombre" type="text"
-                onchange="changeInput();" required minlength="5" maxlength="30">
+                onchange="changeInput();">
         </div>
+        <!--required minlength="5" maxlength="30"-->
         <div class="form-group">
             <label for="age">Edad: </label>
             <input id="age" class="form-control" placeholder="Ingrese la edad" name="edad" type="text"
@@ -37,8 +38,9 @@
         <div class="form-group">
             <label for="address">Dirección: </label>
             <input id="address" class="form-control" placeholder="Ingrese la dirección" name="dirección" type="text"
-                onchange="changeInput();" required pattern="[A-Za-z ]+">
+                onchange="changeInput();" >
         </div>
+        <!--required pattern="[A-Za-z ]+"-->
         <div class="form-group">
             <label for="email">Email: </label>
             <input id="email" class="form-control" placeholder="Ingrese el correo electronico" onkeydown="onKeyDown();"
@@ -49,6 +51,7 @@
             <textarea id="comentario" class="form-control" placeholder="Ingrese el comentario" name="comentario"
                 cols="23" rows="3"></textarea>
         </div>
+        <!--
         <div>
             <label for="">Sistema Operativo:</label>
             <div class="form-check">
@@ -99,6 +102,7 @@
             <label for="invoice">Factura</label>
             <input type="file" id="invoice">
         </div>
+        -->
         <br />
         <div>
             <input type="submit" value="Enviar" class="btn btn-secondary">
@@ -122,13 +126,14 @@
                 function addElements(element,parent){
 
         }
-    -->
+    
     <button onclick="agregarParrafo();">Agregar parrafo</button>
     <button onclick="this.innerHTML = Date()">CLICK ME</button>
     <br />
     <img onmouseover="changeStyle(this, '350px'); changeImage(this, 'assets/images/necklaceESM.png')"
         onmouseout="changeStyle(this, '200px'); changeImage(this, 'assets/images/necklaceRED.png')"
         src="assets/images/necklaceRED.png" width="200px" />
+    -->
 
     <script>
         function validateForm(params) {
