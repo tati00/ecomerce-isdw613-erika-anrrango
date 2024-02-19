@@ -104,47 +104,18 @@
     <h1 id="titulo1">Productos en oferta</h1>
     <br>
     <div class="content">
-        <div class="row">
-            <div class="col col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/images/necklaceESM.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Esmerald</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quaerat?</p>
-                        <div class="collapse" id="esmeraldmoreinfo">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sed
-                            fuga animi obcaecati provident autem veniam illo quae distinctio nesciunt, praesentium
-                            adipisci amet recusandae quos.
-                        </div>
-                        <a href="#esmeraldmoreinfo" data-bs-toggle="collapse" class="btn btn-secondary">
-                            More information</a>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                        <!--btn: muestra la referencia como un boton-->
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="productList">
 
-            <div class="col col-md-3">
+            <!--<div class="col col-md-3">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/necklacePURP.png" class="card-img-top" alt="...">
+                    <img src="assets/images/necklacePURP.png" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">Purple</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quaerat?</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-            </div>
-            <div class="col col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/images/necklaceRED.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Red</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quaerat?</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-
+            </div>-->
             <!--<div class="col">
                 <img src="assets/images/necklaceESM.png" width="150px"></img>
                 <p style="background-color: red;" height="100px;"></p>
@@ -154,6 +125,35 @@
                 <p style="background-color: yellow;" height="100px;"></p>
             </div>-->
         </div>
+    </div>
+    <hr />
+    <div class="content" style="margin-top: 40px; margin-bottom: 50px;">
+        <div class="alert alert-primary" role="alert" id="alertSuccess">
+            Se ha creado el producto de manera exitosa
+        </div>
+        <div class="alert alert-warning" role="alert" id="alertError">
+            Error en la creacion de un producto
+        </div>
+        <form id="createProduct">
+            <div class="form-group">
+                <label for="productId">ID</label>
+                <input type="text" name="productId" id="productId" placeholder="Id de Producto">
+            </div>
+            <div class="form-group">
+                <label for="productName">Nombre</label>
+                <input type="text" name="productName" id="productName" placeholder="Nombre de Producto">
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Descripción</label>
+                <input type="text" name="productDescription" id="productDescription"
+                    placeholder="Descripción de Producto">
+            </div>
+            <div class="form-group">
+                <label for="productImageUrl">Url de la Imagen</label>
+                <input type="text" name="productImageUrl" id="productImageUrl" placeholder="URL de la Imagen de Producto">
+            </div>
+            <button type="button" id="btnCreateProduct" class="btn btn-primary">Crear Producto</button>
+        </form>
     </div>
 
     <table class="table table-striped table-hover table-border" data-bs-theme="dark">
@@ -247,6 +247,68 @@
         crossorigin="anonymous"></script>
 
     <script src="js/test-script.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#alertSuccess').hide();
+            $('#alertError').hide();
+            $('#btnCreateProduct').click(function(){
+                createProduct();
+            });
+
+            refreshProducts();
+        });
+
+        function refreshProducts(){
+
+            $("#productList").html("");
+
+            $.getJSON("http://127.0.0.1:9999/products", function (data) {
+                console.log(data);
+                data.forEach(item => {
+                    var productToAppend = `<div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="${item.imageUrl}" class="card-img-top img-fluid" alt="Atari 2600">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.description}</p>                                
+                                <a href="#" class="btn btn-primary">Detalles</a>
+                            </div>
+                    </div>
+                </div>`
+                    $('#productList').append(productToAppend);
+                });
+            });
+        }
+
+        function createProduct(){
+            $('#alertSuccess').hide();
+            $('#alertError').hide();
+            var productId = $('#productId').val();
+            var productName = $('#productName').val();
+            var productDescription = $('#productDescription').val();
+            var productImageUrl = $('#productImageUrl').val();
+
+            //TODO: Validaciones
+            $.ajax({
+                url: 'http://127.0.0.1:9999/products',
+                method: 'POST',
+                data: JSON.stringify({ id: productId, name: productName, description: productDescription, imageUrl: productImageUrl}),
+                dataType: 'json', //Response
+                processData: false,
+                contentType: 'application/json' //Request
+            }).done(function(data){
+                console.log(data);
+                $('#alertSuccess').show();
+                refreshProducts();
+            }).fail(function(){
+                $('#alertError').show();
+                console.log('ERROR');
+            });
+
+        }
+
+    </script>
+
 
 </body>
 
